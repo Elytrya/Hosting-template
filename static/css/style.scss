@@ -1,0 +1,235 @@
+// Переменные
+$primary-color: #0a84ff; // Основной цвет
+$background-color: #1c1c1e; // Цвет фона
+$text-color: #ffffff; // Цвет текста
+$highlight-gradient: linear-gradient(45deg, #0a58ff, #4c61d4); // Градиент для выделения
+$hover-color: #3a3a3c; // Цвет при наведении
+$font-size: 16px;
+$padding: 20px;
+$border-radius: 16px;
+$transition-duration: 0.3s;
+$nav-height: 60px; // Высота навигационной панели
+$main-content-width: 750px; // Увеличенная ширина основного блока
+$main-heading-font-size: 3rem; // Увеличенный размер шрифта заголовка
+$highlight-font-size: 3rem; // Увеличенный размер шрифта для выделения
+$top-spacing: 200px; // Отступ сверху для основного блока
+
+// Сброс стилей
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: $font-size;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+  overflow: hidden; // Скрыть скроллбар
+}
+
+// Анимация фона
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+
+// Основной блок
+.main {
+  position: absolute;
+  top: $top-spacing; // Отступ сверху
+  left: 50px; // Отступ от левого края
+  width: $main-content-width; // Увеличенная ширина
+  padding: $padding;
+  border-radius: $border-radius;
+  background-color: darken($background-color, 10%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  
+  h1 {
+    color: $text-color; // Белый цвет текста
+    font-size: $main-heading-font-size;
+    line-height: 1.3;
+    margin-bottom: $padding;
+    
+    span.highlight {
+      background: $highlight-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: $highlight-font-size;
+      background-size: 200% 200%;
+      animation: backgroundAnimation 10s ease infinite;
+    }
+  }
+  
+  p {
+    color: $text-color; // Белый цвет текста
+    margin-bottom: $padding;
+  }
+  
+  a {
+    display: inline-block;
+    color: $text-color; // Белый цвет текста
+    background-color: $primary-color;
+    padding: 12px 24px;
+    border-radius: $border-radius;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color $transition-duration, transform $transition-duration;
+    
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Навигационная панель
+.nav-bar {
+  background-color: darken($background-color, 10%);
+  height: $nav-height;
+  padding: 0 $padding;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: $border-radius;
+  margin-right: 50px; /* Отступ справа */
+  position: fixed;
+  top: 20px; /* Отступ сверху */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  p {
+    margin-left: $padding;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color $transition-duration, background-color $transition-duration;
+    padding: 10px;
+    border-radius: $border-radius;
+    
+    &:hover {
+      color: $primary-color;
+      background-color: $hover-color;
+    }
+  }
+}
+
+// Навигационная панель
+.title {
+  background-color: darken($background-color, 10%);
+  height: 60;
+  padding: 0 20px 0px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: $border-radius;
+  margin-right: 1250px; /* Отступ справа */
+  position: fixed;
+  top: 10px; /* Отступ сверху */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+
+  p {
+    margin-left: $padding;
+
+    font-weight: bold;
+    transition: color $transition-duration, background-color $transition-duration;
+    padding: 10px;
+    border-radius: $border-radius;
+    
+    &:hover {
+      color: rgb(36, 81, 231);
+      background-color: rgb(21, 16, 16);
+    }
+  }
+}
+img{
+  width: 50px;
+  height: 50px;
+}
+.console {
+    width: 600px;
+    height: 400px;
+    box-shadow: 0 2px 120px #0a58ff;
+    background: darken($background-color, 10%);
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  
+    // Позиционирование консоли
+    position: fixed;
+    top: 200px;
+    right: 30px;
+    
+    .left-top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px;
+      background: $background-color;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+  
+      .red, .yellow, .green {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 0 5px;
+        display: inline-block;
+      }
+  
+      .red {
+        background: #ff5f57;
+      }
+  
+      .yellow {
+        background: #ffbd2e;
+      }
+  
+      .green {
+        background: #27c93f;
+      }
+    }
+  
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      background: $background-color;
+      border-top: 1px solid #444;
+      border-bottom: 1px solid #444;
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: #ffffff;
+      }
+    }
+  
+    .content {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #1e1e1e;
+      border-radius: 0 0 8px 8px;
+  
+      #console-content {
+        white-space: pre;
+      }
+    }
+  }
+  

@@ -1,17 +1,17 @@
 <template>
     <div class="title">
-        <img src="https://i.imgur.com/LJ1j8l7.jpg" alt="Логотип">
-        <p>Название</p>
+        <img src="https://i.imgur.com/LJ1j8l7.jpg" alt="Логотип">   <!-- Cюда ваш логотип -->
+        <p>Название</p>  <!-- Cюда ваше название хостинга--> 
     </div>
     <div class="nav-bar">
-      <p>Главная</p>
+      <p>Главная</p> 
       <p>Отзывы</p>
       <p>Тарифы</p>
       <p>Панель управления</p>
       <p>Билинг</p>
     </div>
     <div class="main">
-      <h1>Закажите <span class="highlight">свой</span> сервер под <br><span class="highlight">ваши</span> нужды!</h1>
+      <h1>Закажите <span class="highlight">свой</span> сервер под <br><span class="highlight">ваши</span> нужды!</h1>  <!-- Описание -->
       <p>Закажите сервер у нас уже сегодня, мы предлагаем недорогие тарифы и услуги для вас, предоставляя лучшую поддержку.</p>
       <a href="">Подробнее</a>
     </div>
@@ -35,7 +35,7 @@
       data() {
         return {
           txt: [
-            { text: "[Bot]: Starting up and connecting to Discord servers...", color: "green" },
+            { text: "[Bot]: Starting up and connecting to Discord servers...", color: "green" },  
             { text: "[Bot]: Loading configuration and modules...", color: "yellow" },
             { text: "[Bot]: Fetching server data and user info...", color: "blue" },
             { text: "[Bot]: Syncing with Discord API, please wait...", color: "purple" },

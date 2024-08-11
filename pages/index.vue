@@ -1,7 +1,7 @@
 <template>
     <div class="title">
         <img src="https://i.imgur.com/LJ1j8l7.jpg" alt="Логотип">
-        <p>SpiderNodes</p>
+        <p>Название</p>
     </div>
     <div class="nav-bar">
       <p>Главная</p>
